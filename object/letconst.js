@@ -1,5 +1,5 @@
 const family = {
-        d1text : "패밀리 사이트",
+        d1text : " Relativesite",
         familysite : [
           {
               atext: "GIT",
@@ -16,8 +16,12 @@ const family = {
         ]
 }
 
-console.log(family.familysite[0].atext, family.familysite[0].href);
 
-const mytag = `<a href="${family.familysite[0].href}">${family.familysite[0].atext}</a>`;
+window.addEventListener('load', function(){
 
-console.log(mytag);
+        this.document.querySelector("#family h2").innerHTML = family.d1text;
+
+        this.document.querySelector("#family ul").innerHTML = `<li>${family.familysite[0].atext}</li>`;
+        this.document.querySelector("#family ul").innerHTML += `<li>${family.familysite[1].atext}</li>`;
+        this.document.querySelector("#family ul").innerHTML += `<li>${family.familysite[2].atext}</li>`;
+})
