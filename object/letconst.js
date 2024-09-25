@@ -16,12 +16,14 @@ const family = {
         ]
 }
 
+let familytag = '';
+
+for ( x of family.familysite ) {
+    `<li>${x.atext}</li>`;
+}
 
 window.addEventListener('load', function(){
 
         this.document.querySelector("#family h2").innerHTML = family.d1text;
-
-        this.document.querySelector("#family ul").innerHTML = `<li>${family.familysite[0].atext}</li>`;
-        this.document.querySelector("#family ul").innerHTML += `<li>${family.familysite[1].atext}</li>`;
-        this.document.querySelector("#family ul").innerHTML += `<li>${family.familysite[2].atext}</li>`;
+        this.document.querySelector("#family ul").innerHTML = familytag;
 })
