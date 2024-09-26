@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
   // }
 
   for(x of family.familysite ){
-    familylist += `<li>${x.atext}</li>`;
+    familylist += `<li><a href=${x.href}>${x.atext}</a></li>`;
   }
   this.document.querySelector("#family ul").innerHTML = familylist;
 
