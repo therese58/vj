@@ -1,0 +1,23 @@
+{
+  "liveSassCompile.settings.useNewCompiler": false,
+  "liveSassCompile.settings.includeItems": [
+
+  ],
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+
+    
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null,
+      "savePathReplacementPairs": null
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": null,
+      "savePathReplacementPairs": null
+    }
+  ]
+}

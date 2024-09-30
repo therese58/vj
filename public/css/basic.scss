@@ -1,0 +1,86 @@
+#hd {
+  .inner {
+    h1 {
+      .logo {
+        //svg 로고 배경으로 처리
+        // background-image: url('모바일 로고');
+        // max-width: 150px;
+        // width: 30vw;
+
+        // @media (min-width:991px){
+        //     background-image: url('데스크탑 svg경처리');
+        //     width: 150px;
+        //     height: 60px;
+        // }
+
+        &:before{
+          content: "svg로고";
+        }
+        .visually-hidden {}
+      }
+    }
+
+    #hd_allmenu_bby {
+      svg {
+
+      }
+    }
+
+    nav {
+      a{
+        color: #000;
+        white-space: nowrap;
+      }
+      > ul {
+
+        > li { 
+          &:nth-child(2){
+            > a{
+              padding: 0 3rem;
+            }
+            .position-absolute{
+              ul{
+                display: inline-block;
+              }
+              //inline-block은 자식요소로부터 넓이를 받음
+            }
+          }
+          > a {font-size: 1.5em; padding: 0 1.5rem;}
+
+          // 소메뉴
+          .position-absolute {
+            background: #fff;
+            // border: 1px solid #ccc;
+            left: 0;
+            right: 0;
+            top: 100%; //a 바로 아래로 내려가겠다
+            min-width: 100px;
+
+            max-height: 0;
+            overflow: hidden;
+
+            ul {
+              border: 1px solid #ccc;
+              padding: 1rem;
+              li {
+                a {}
+              }
+            }
+          }
+
+          //hover
+          &:hover{
+            >a{
+              color: orange;
+            }
+
+            .position-absolute{
+              transition: 0.5s;
+              max-height: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
