@@ -1,0 +1,14 @@
+#mainBanner .swiper-slide {
+  background-color: #000;
+  color: #fff;
+  font-size: 100px;
+  opacity: 1;
+  transition: 0.5s;
+  background-position: center;
+  background-size: cover;
+}
+#mainBanner .swiper-slide.swiper-slide-active {
+  opacity: 0.5;
+  font-size: 200px !important;
+  background-color: red;
+}

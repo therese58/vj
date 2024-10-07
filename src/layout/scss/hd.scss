@@ -1,0 +1,161 @@
+#hd {
+  .inner {
+    h1 {
+      .logo {
+        //svg 로고 배경으로 처리
+        // background-image: url('모바일 로고');
+        // max-width: 150px;
+        // width: 30vw;
+
+        // @media (min-width:991px){
+        //     background-image: url('데스크탑 svg경처리');
+        //     width: 150px;
+        //     height: 60px;
+        // }
+
+        &:before{
+          content: "svg로고";
+        }
+        .visually-hidden {}
+      }
+    }
+
+    #hd_allmenu_kcr {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>');
+      width: 2rem;
+      height: 2rem;
+      background-size: cover;
+      }
+    }
+
+    nav {
+      a{
+        color: #000;
+      }
+      > ul {
+        &:before{ //실제 태그가 아니니고 ul 가짜막내
+          content: ""; //가상선택자에 content 안 넣으면 아무것도 안보임
+          display: block;
+          position: absolute; //ul 크기 뿐만 아니라 더 크게. #hd에 포지션 fixed 있음
+          left: 0; right: 0;
+          top: 100%;
+          height: 0;
+          border-top: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+          background-color: white;
+          transition: 0.5s;
+        }
+
+        &:hover:before{
+          height: 15rem;
+        }
+
+        > li { 
+          &:nth-child(2){
+            > a{
+              // padding: 0 3rem; // px-5
+            }
+            .position-absolute{
+              right: unset;
+              ul{
+                display: inline-block; //d-inline-block
+              }
+              //inline-block은 자식요소로부터 넓이를 받음
+            }
+          }
+          > a {
+            //대메뉴 a태그가 hd의 높이를 생성한다.
+            font-size: 1.5em;
+            padding: 20px 1.5rem;
+          }
+
+          // 소메뉴
+          .position-absolute {
+            // border: 1px solid #ccc;
+            left: 0; //start-0
+            right: 0; 
+            top: 100%; //a 바로 아래로 내려가겠다
+            min-width: 100px;
+            height: 0;
+            overflow: hidden; //overflow-hidden
+            transition: 0.5s;
+
+            ul {
+              // background-color: #fff;
+              // border: 1px solid #ccc;
+              padding: 1rem; //p-3
+              li {
+                a {}
+
+                &:hover{
+                  >a{
+                    color: red;
+                  }
+                }
+              }
+            }
+          }
+
+          //hover
+          &:hover{
+            >a{
+              color: orange;
+            }
+          }
+        }
+
+        &:hover{
+          .position-absolute{
+            transition: 0.5s;
+            height: 15rem;
+          }
+        }
+
+      }
+    }
+  }
+
+  #navi{
+    @media (max-width:991px){
+        position : absolute; // 전체메뉴
+        .position-absolute{ position: urset !important;} //소메뉴
+    }
+  }
+  
+  body.menuOpen{
+    &:after{
+      content: "";
+      display: block;
+      position: fixed;
+      left:0; right:0;
+      top:0; bottom:0;
+      // background-color: rgba(0,0,0,.8);
+    }
+    #hd{
+      
+      #hd_allmenu_kcr {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');
+        width:2rem; height:2rem;
+        background-size: cover;
+      }
+        
+        nav{
+          display: block !important;
+        }
+    }
+  
+  }
+
+  body.slide-0,
+  body.slide-2{
+    #hd{
+      a{
+        color: white !important;
+      }
+    }
+    #mainBanner{
+      .swiper-slide{
+        color: whtie !important;
+      }
+    }
+  }

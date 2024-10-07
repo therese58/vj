@@ -1,0 +1,98 @@
+@charset "UTF-8";
+#hd .inner h1 .logo:before {
+  content: "svg로고";
+}
+#hd .inner #hd_allmenu_kcr {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>');
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+}
+#hd nav a {
+  color: #000;
+}
+#hd nav > ul:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  transition: 0.5s;
+}
+#hd nav > ul:hover:before {
+  height: 15rem;
+}
+#hd nav > ul > li:nth-child(2) .position-absolute {
+  right: unset;
+}
+#hd nav > ul > li:nth-child(2) .position-absolute ul {
+  display: inline-block;
+}
+#hd nav > ul > li > a {
+  font-size: 1.5em;
+  padding: 20px 1.5rem;
+}
+#hd nav > ul > li .position-absolute {
+  left: 0;
+  right: 0;
+  top: 100%;
+  min-width: 100px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+#hd nav > ul > li .position-absolute ul {
+  padding: 1rem;
+}
+#hd nav > ul > li .position-absolute ul li:hover > a {
+  color: red;
+}
+#hd nav > ul > li:hover > a {
+  color: orange;
+}
+#hd nav > ul:hover .position-absolute {
+  transition: 0.5s;
+  height: 15rem;
+}
+
+@media (max-width: 991px) {
+  #navi {
+    position: absolute;
+  }
+  #navi .position-absolute {
+    position: urset !important;
+  }
+}
+
+body.menuOpen:after {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+body.menuOpen #hd #hd_allmenu_kcr {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+}
+body.menuOpen #hd nav {
+  display: block !important;
+}
+
+body.slide-0 #hd a,
+body.slide-2 #hd a {
+  color: white !important;
+}
+body.slide-0 #mainBanner .swiper-slide,
+body.slide-2 #mainBanner .swiper-slide {
+  color: whtie !important;
+}

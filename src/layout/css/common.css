@@ -1,0 +1,19 @@
+/* 템플릿제작하기 */
+*{
+  margin: 0; padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+}
+li{list-style: none;}
+a{text-decoration: none;}
+
+/* 커스터마이징 공통클래스 common */
+.itemcenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zup{
+  z-index: 10000;
+}
