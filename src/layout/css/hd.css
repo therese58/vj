@@ -13,6 +13,7 @@
 }
 #hd nav > ul:before {
   content: "";
+  display: none;
   display: block;
   position: absolute;
   left: 0;
@@ -57,7 +58,6 @@
 }
 #hd nav > ul:hover .position-absolute {
   transition: 0.5s;
-  height: 15rem;
 }
 
 @media (max-width: 991px) {
@@ -95,4 +95,20 @@ body.slide-2 #hd a {
 body.slide-0 #mainBanner .swiper-slide,
 body.slide-2 #mainBanner .swiper-slide {
   color: whtie !important;
+}
+
+body #family {
+  transform: translateX(150%);
+  transition: 0.5s;
+}
+body.scrolldown #hd {
+  background-color: white !important;
+  border-bottom: 1px solid #ccc;
+}
+body.scrolldown #hd a {
+  color: black !important;
+  padding: 10px 1rem;
+}
+body.scrolldown #family {
+  transform: translateX(0);
 }

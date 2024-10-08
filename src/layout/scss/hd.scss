@@ -35,6 +35,7 @@
       > ul {
         &:before{ //실제 태그가 아니니고 ul 가짜막내
           content: ""; //가상선택자에 content 안 넣으면 아무것도 안보임
+          display: none;
           display: block;
           position: absolute; //ul 크기 뿐만 아니라 더 크게. #hd에 포지션 fixed 있음
           left: 0; right: 0;
@@ -107,7 +108,7 @@
         &:hover{
           .position-absolute{
             transition: 0.5s;
-            height: 15rem;
+            // height: 15rem; 이걸 가리면 오버해도 아무것도 안보임
           }
         }
 
@@ -156,6 +157,27 @@
     #mainBanner{
       .swiper-slide{
         color: whtie !important;
+      }
+    }
+  }
+
+
+  body{
+    #family{
+      transform: translateX(150%);
+      transition: 0.5s;
+    }
+    &.scrolldown{
+      #hd{
+        background-color: white !important;
+        border-bottom: 1px solid #ccc;
+        a{
+          color: black !important;
+          padding: 10px 1rem;
+        }
+      }
+      #family{
+        transform: translateX(0);
       }
     }
   }
