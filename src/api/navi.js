@@ -36,8 +36,8 @@ window.addEventListener('load', function(){
 
 
   //패밀리노출
-  this.document.querySelector("#family").addEventListener('click', function(){
-    this.classList.toggle('open');
+  this.document.querySelector("#family h2").addEventListener('click', function(){
+    this.parentNode.classList.toggle('open');
   })
 
   //const allMenubtn = this.document.querySelector("#hd_allmenu_kcr");

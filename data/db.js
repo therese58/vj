@@ -18,8 +18,8 @@ const family = {
 
 const mynavi = [
   {
-    title: "메뉴1",
-    href: "#",
+    title: "about",
+    href: "http://www.naver.com",
     submenu: [
       { text: "소메뉴", href: "#" },
       { text: "소메뉴", href: "#" },
@@ -28,8 +28,8 @@ const mynavi = [
     ]
   },
     {
-      title: "대메뉴",
-      href: "#",
+      title: "portfolio",
+      href: "#portfolio",
       submenu: [
         { text: "소메뉴1-1", href: "#" },
         { text: "소메뉴1-2", href: "#" },
@@ -38,8 +38,8 @@ const mynavi = [
       ]
     },
     {
-      title: "대메뉴",
-      href: "#",
+      title: "info",
+      href: "#info",
       submenu: [
         { text: "소메뉴1-1", href: "#" },
         { text: "소메뉴1-2", href: "#" },
@@ -48,8 +48,8 @@ const mynavi = [
       ]
     },
     {
-      title: "대메뉴",
-      href: "#",
+      title: "contact",
+      href: "#contact",
       submenu: [
         { text: "소메뉴1-1", href: "#" },
         { text: "소메뉴1-2", href: "#" },
