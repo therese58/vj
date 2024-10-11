@@ -3,14 +3,14 @@
     h1 {
       .logo {
         //svg 로고 배경으로 처리
-        // background-image: url('모바일 로고');
-        // max-width: 150px;
-        // width: 30vw;
-
-        // @media (min-width:991px){
-        //     background-image: url('데스크탑 svg경처리');
-        //     width: 150px;
-        //     height: 60px;
+        // background-image: url('모바일 로고svg');  
+        // max-width:150px;
+        // width:30vw;      
+       
+        // @media (min-width:991px) {
+        //   background-image: url('데스크탑 로고svg');
+        //   width:150px; 
+        //   height: 60px;     
         // }
 
         &:before{
@@ -20,79 +20,65 @@
       }
     }
 
-    #hd_allmenu_kcr {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>');
-      width: 2rem;
-      height: 2rem;
+    #hd_allmenu_bby {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></svg>');
+      width:2rem; height:2rem;
       background-size: cover;
-      }
     }
 
     nav {
       a{
-        color: #000;
+        color:black;   
       }
-      > ul {
-        &:before{ //실제 태그가 아니니고 ul 가짜막내
-          content: ""; //가상선택자에 content 안 넣으면 아무것도 안보임
-          display: none;
-          display: block;
-          position: absolute; //ul 크기 뿐만 아니라 더 크게. #hd에 포지션 fixed 있음
-          left: 0; right: 0;
-          top: 100%;
-          height: 0;
-          border-top: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
-          background-color: white;
-          transition: 0.5s;
-        }
+      >  ul {
+          &:before{
+            //  content: "";
+             display: block;
+             position: absolute;
+             left:0; right:0;
+             top:100%;
+             height: 0;
+             background-color: white;
+             border-bottom: 1px solid #ddd;
+             border-top: 1px solid #ddd;
+             transition: 0.5s;
+          }
+          &:hover:before{
+            height:15rem;
+          }
 
-        &:hover:before{
-          height: 15rem;
-        }
-
-        > li { 
+        > li { //대메뉴 li
           &:nth-child(2){
-            > a{
-              // padding: 0 3rem; // px-5
+            >a{
+             
             }
             .position-absolute{
               right: unset;
               ul{
-                display: inline-block; //d-inline-block
-              }
-              //inline-block은 자식요소로부터 넓이를 받음
+                display: inline-block; // d-inline-block
+              }              
             }
           }
-          > a {
-            //대메뉴 a태그가 hd의 높이를 생성한다.
-            font-size: 1.5em;
-            padding: 20px 1.5rem;
+          >  a { 
+            // 대메뉴 a태그가 hd 높이를 생성한다.
+            font-size: 1.5em;  
+            padding: 30px 1.5rem; // px-4
           }
-
-          // 소메뉴
-          .position-absolute {
-            // border: 1px solid #ccc;
-            left: 0; //start-0
-            right: 0; 
-            top: 100%; //a 바로 아래로 내려가겠다
-            min-width: 100px;
+          //소메뉴
+          .position-absolute {                  
+            left:0; // start-0
+            right:0; // end-0
+            top:100%; // top-100
+            min-width:100px;            
             height: 0;
-            overflow: hidden; //overflow-hidden
-            transition: 0.5s;
-
+            overflow: hidden; // overflow-hidden
+            transition: 0.5s; // hover 할때만 애니메이션처리
             ul {
-              // background-color: #fff;
-              // border: 1px solid #ccc;
-              padding: 1rem; //p-3
+             
+              padding:1rem; // p-3
+                
               li {
                 a {}
-
-                &:hover{
-                  >a{
-                    color: red;
-                  }
-                }
               }
             }
           }
@@ -100,84 +86,86 @@
           //hover
           &:hover{
             >a{
-              color: orange;
+              color:orange //대메뉴 활성화
             }
+           
           }
-        }
 
+        }////li 대메뉴
         &:hover{
-          .position-absolute{
-            transition: 0.5s;
-            // height: 15rem; 이걸 가리면 오버해도 아무것도 안보임
+          .position-absolute{            
+           // height: 15rem;
           }
-        }
-
+        }////ul 네비
       }
     }
   }
+}
 
-  #navi{
-    @media (max-width:991px){
-        position : absolute; // 전체메뉴
-        .position-absolute{ position: urset !important;} //소메뉴
-    }
-  }
-  
-  body.menuOpen{
+#navi{
+   @media (max-width:991px) {
+     position: absolute;   // 전제메뉴
+     .position-absolute{ // 소메뉴
+      position: unset !important;
+     } 
+   }
+}
+
+
+body.menuOpen{
     &:after{
       content: "";
       display: block;
       position: fixed;
       left:0; right:0;
       top:0; bottom:0;
-      // background-color: rgba(0,0,0,.8);
+      background-color: rgba(0,0,0,.8);
     }
     #hd{
-      
-      #hd_allmenu_kcr {
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>');
-        width:2rem; height:2rem;
-        background-size: cover;
+
+      #hd_allmenu_bby {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">         <path fill-rule="evenodd" d="M1.5 1.5a.5.5 0 0 1 .707 0L8 7.293 14.793 1.5a.5.5 0 0 1 .707.707L8.707 8l6.793 6.793a.5.5 0 0 1-.707.707L8 8.707 1.5 14.5a.5.5 0 0 1-.707-.707L7.293 8 1.5 1.5z"/></svg>');
+        width:2rem; height:2rem;       
       }
         
         nav{
           display: block !important;
         }
     }
-  
+
+}
+
+body.slide-0,
+body.slide-2{
+  #hd{
+     a{ 
+      color:white !important
+     }
+  }
+  #mainBanner{
+    .swiper-slide{
+      color:white !important
+    }
   }
 
-  body.slide-0,
-  body.slide-2{
+}
+
+body{
+  #family{
+    transform: translateX(150%);
+    transition: 0.5s;
+  }
+  &.scrolldown{
     #hd{
+      background-color: white !important;
+      border-bottom:1px solid #ccc;
       a{
-        color: white !important;
+        color:black !important;
+        padding: 10px 1rem !important;
       }
     }
-    #mainBanner{
-      .swiper-slide{
-        color: whtie !important;
-      }
-    }
-  }
-
-
-  body{
     #family{
-      transform: translateX(150%);
-      transition: 0.5s;
-    }
-    &.scrolldown{
-      #hd{
-        background-color: white !important;
-        border-bottom: 1px solid #ccc;
-        a{
-          color: black !important;
-          padding: 10px 1rem;
-        }
-      }
-      #family{
-        transform: translateX(0);
-      }
+      transform: translateX(0);
     }
   }
+}
